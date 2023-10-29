@@ -1,4 +1,4 @@
-package com.github.krandalf75.translate.plugin;
+package io.github.krandalf75.translate.plugin;
 
 import com.theokanning.openai.completion.CompletionChoice;
 import com.theokanning.openai.completion.CompletionRequest;
@@ -53,7 +53,11 @@ public class TranslateMojo extends AbstractMojo {
      */
     private String apiKey;
 
-
+    /**
+     *
+     * @throws MojoExecutionException
+     */
+    @Override
     public void execute() throws MojoExecutionException {
         getLog().info("Translating properties file: " + propertiesFile.getPath() + " to locales: " + locales);
 

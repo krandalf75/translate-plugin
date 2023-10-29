@@ -16,7 +16,7 @@ To use the plugin, include the necessary configuration in your `pom.xml` as show
   <build>
     <plugins>
       <plugin>
-        <groupId>com.github.krandalf75</groupId>
+        <groupId>io.github.krandalf75</groupId>
         <artifactId>translate-plugin</artifactId>
         <version>1.0</version>
         <executions>
