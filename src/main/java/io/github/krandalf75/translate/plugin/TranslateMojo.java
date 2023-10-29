@@ -15,47 +15,43 @@ import java.util.Map;
 import nu.studer.java.util.OrderedProperties;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+
 /**
  * Goal which translates a properties file to different locales.
- *
- * @goal translate
- * @phase process-sources
  */
+@Mojo( name = "translate", defaultPhase = LifecyclePhase.PROCESS_RESOURCES)
 public class TranslateMojo extends AbstractMojo {
 
     /**
      * Location of the properties file.
-     *
-     * @parameter property="propertiesFile"
-     * default-value="path/to/your/properties/file"
      */
+    @Parameter(property = "propertiesFile", defaultValue = "path/to/your/properties/file" )
     private File propertiesFile;
 
     /**
      * Locale of the source properties file.
-     *
-     * @parameter property="sourceLocale" default-value="en"
      */
+    @Parameter(property="sourceLocale", defaultValue="en" )
     private String sourceLocale;
 
     /**
      * Locales to translate the properties file to.
-     *
-     * @parameter property="locales" default-value="en,fr,de" // Provide your
-     * desired default values
      */
+    @Parameter(property="locales", defaultValue="en,fr,de" )
     private String locales;
 
     /**
      * OpenAI API key.
-     *
-     * @parameter property="openai.api.key" default-value="YOUR_OPENAI_API_KEY"
      */
+    @Parameter(property="openai.api.key", defaultValue="YOUR_OPENAI_API_KEY" )
     private String apiKey;
 
     /**
-     *
-     * @throws MojoExecutionException
+     * Execute plugin
+     * @throws MojoExecutionException exception
      */
     @Override
     public void execute() throws MojoExecutionException {
