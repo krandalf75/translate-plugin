@@ -1,5 +1,9 @@
 name: Maven compile
 
+on:
+  push:
+    branches: [master, main]
+
 jobs:
   build:
 
