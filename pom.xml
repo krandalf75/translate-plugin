@@ -4,10 +4,10 @@
     <groupId>io.github.krandalf75</groupId>
     <artifactId>translate-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>translate-plugin</name>
     <url>https://github.com/krandalf75/translate-plugin</url>
-    
+  
     <distributionManagement>
         <repository>
             <id>github</id>
@@ -15,7 +15,8 @@
             <url>https://maven.pkg.github.com/krandalf75/translate-plugin</url>
         </repository>
     </distributionManagement>
-    
+
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -47,7 +48,7 @@
         <dependency>
             <groupId>com.theokanning.openai-gpt3-java</groupId>
             <artifactId>service</artifactId>
-            <version>0.16.1</version>
+            <version>0.18.2</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -102,8 +103,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
-
+                    
         </plugins>
     </build>
 </project>
